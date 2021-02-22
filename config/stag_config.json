@@ -1,0 +1,5 @@
+{
+    "environment": "staging",
+    "enableCrashlytics": true,
+    "baseUrl": "http://"
+}

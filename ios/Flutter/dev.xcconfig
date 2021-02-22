@@ -1,0 +1,15 @@
+#include "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"
+#include "Generated.xcconfig"
+//
+//  Dev.xcconfig
+//  Runner
+//
+//  Created by SAYeTECH on 19/02/2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+BUNDLE_ID_SUFFIX=.dev
+PRODUCT_BUNDLE_IDENTIFIER=com.example.firetest.dev
+FLUTTER_TARGET=lib/main_dev.dart
+APP_DISPLAY_NAME=Firetest DEV

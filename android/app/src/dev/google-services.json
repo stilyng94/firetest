@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "361190843628",
+    "firebase_url": "https://portfoliowebsite-b826b.firebaseio.com",
+    "project_id": "portfoliowebsite-b826b",
+    "storage_bucket": "portfoliowebsite-b826b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361190843628:android:bf1d25ab6bc0ae7de371c9",
+        "android_client_info": {
+          "package_name": "com.example.firetest.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361190843628-e0kd5202arisqnrvnrbilg346pseth5d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMGMjk6HG1MWRQC0AtGs3_RCNEvleI4Ak"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361190843628-e0kd5202arisqnrvnrbilg346pseth5d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "361190843628-enbadnlhvjepk989b2bl2if8rp015h5c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firetest-flavour.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

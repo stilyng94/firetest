@@ -1,0 +1,71 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Firetest Dev",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/flavors/main_dev.dart",
+            "args": [
+                "--flavor",
+                "dev"
+            ]
+        },
+        {
+            "name": "Firetest Dev Release",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "program": "lib/flavors/main_prod.dart",
+            "args": [
+                "--flavor",
+                "dev"
+            ]
+        },
+        {
+            "name": "Firetest Stag",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/flavors/main_dev.dart",
+            "args": [
+                "--flavor",
+                "stag"
+            ]
+        },
+        {
+            "name": "Firetest Stag Release",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "program": "lib/flavors/main_prod.dart",
+            "args": [
+                "--flavor",
+                "stag"
+            ]
+        },
+        {
+            "name": "Firetest Stag",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "program": "lib/flavors/main_stag.dart",
+            "args": [
+                "--flavor",
+                "stag"
+            ]
+        },
+        {
+            "name": "Firetest Prod",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "program": "lib/flavors/main_prod.dart",
+            "args": [
+                "--flavor",
+                "prod"
+            ]
+        },
+    ]
+}
