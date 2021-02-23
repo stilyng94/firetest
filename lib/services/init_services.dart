@@ -1,3 +1,4 @@
+import 'package:firetest/services/auth_service.dart';
 import 'package:firetest/services/config_service.dart';
 import 'package:firetest/services/crashlytics_service.dart';
 import 'package:firetest/services/fcm_service.dart';
@@ -17,5 +18,6 @@ Future<void> initServices(String assetName) async {
   await FCMMessagingHandlers.onMessageHandler();
   await FCMMessagingHandlers.onBackgroundHandler();
   await FCMMessagingHandlers.onMessageOpenedAppHandler();
+  Get.lazyPut(() => AuthService());
   return;
 }
