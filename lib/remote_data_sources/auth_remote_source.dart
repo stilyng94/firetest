@@ -3,7 +3,7 @@ import 'package:firetest/utils/apple_oauth_util.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
-abstract class IGoogleAuthRemoteSource {
+abstract class IAuthRemoteSource {
   Future<UserCredential> signInOrUpWithGoogle(GoogleSignIn googleSignIn);
   Future<UserCredential> createUserWithEmailAndPassword(
       FirebaseAuth firebaseAuth, String email, String password);
@@ -15,7 +15,7 @@ abstract class IGoogleAuthRemoteSource {
   Future<void> appleLogout();
 }
 
-class GoogleAuthRemoteSource implements IGoogleAuthRemoteSource {
+class AuthRemoteSource implements IAuthRemoteSource {
   @override
   Future<UserCredential> createUserWithEmailAndPassword(
       FirebaseAuth firebaseAuth, String email, String password) async {

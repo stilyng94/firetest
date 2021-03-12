@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:firetest/core/adaptives/android_scaffold.dart';
 import 'package:firetest/core/adaptives/cupertino_scaffold.dart';
-import 'package:firetest/screens/signup/signup_widget.dart';
+import 'package:firetest/widgets/signup_widget.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatelessWidget {

@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:firetest/controllers/google_auth_controller.dart';
+import 'package:firetest/controllers/auth_controller.dart';
 import 'package:firetest/core/adaptives/android_scaffold.dart';
 import 'package:firetest/core/adaptives/cupertino_scaffold.dart';
 import 'package:firetest/core/shared/size_config.dart';
 import 'package:firetest/routes/router.dart';
-import 'package:firetest/screens/login/login_page.dart';
+
 import 'package:firetest/services/fcm_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
@@ -23,8 +23,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final fcmService = Get.find<FCMService>();
-  final GoogleAuthController googleAuthController =
-      Get.find<GoogleAuthController>();
+  final AuthController googleAuthController = Get.find<AuthController>();
 
   @override
   void initState() {
@@ -41,9 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Center(
               child: Column(
                 children: [
-                  RaisedButton(
+                  ElevatedButton(
                     onPressed: () {
-                      Get.offAll(LoginPage());
+                      Get.offAllNamed(Routes.LOGIN_ROUTE);
                       return;
                     },
                     child: Text("Login"),
@@ -74,21 +73,21 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Center(
               child: Column(
                 children: [
-                  RaisedButton(
+                  ElevatedButton(
                     onPressed: () {
-                      Get.offAllNamed(NamedRoutes.login);
+                      Get.offAllNamed(Routes.LOGIN_ROUTE);
                       return;
                     },
                     child: Text("Login"),
                   ),
-                  RaisedButton(
+                  ElevatedButton(
                     onPressed: () {
-                      Get.offAllNamed(NamedRoutes.signup);
+                      Get.offAllNamed(Routes.SIGNUP_ROUTE);
                       return;
                     },
                     child: Text("Signup"),
                   ),
-                  RaisedButton(
+                  ElevatedButton(
                     onPressed: () {
                       googleAuthController.signInOrUpWithGoogle();
                       return;
