@@ -39,3 +39,5 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
+**/ios/Runner/Firebase/**/GoogleService-info.plist
+**/android/app/src/**/google-services.json
