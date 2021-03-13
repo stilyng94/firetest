@@ -11,8 +11,8 @@ class BuildResponsiveChild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveSafeArea(
-      builder: (context, size) => Container(
+    return _ResponsiveSafeArea(
+      responsiveSafeAreaBuilder: (context, size) => Container(
         width: size.width,
         child: child,
         height: size.height,
@@ -21,12 +21,11 @@ class BuildResponsiveChild extends StatelessWidget {
   }
 }
 
-class ResponsiveSafeArea extends StatelessWidget {
-  const ResponsiveSafeArea({
+class _ResponsiveSafeArea extends StatelessWidget {
+  const _ResponsiveSafeArea({
     Key key,
-    @required ResponsiveSafeAreaBuilder builder,
-  })  : responsiveSafeAreaBuilder = builder,
-        super(key: key);
+    this.responsiveSafeAreaBuilder,
+  }) : super(key: key);
   final ResponsiveSafeAreaBuilder responsiveSafeAreaBuilder;
 
   @override

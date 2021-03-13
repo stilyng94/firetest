@@ -1,4 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firetest/services/db_service.dart';
 import 'package:firetest/services/fcm_service.dart';
 import 'package:firetest/services/local_notification_service.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -33,28 +35,16 @@ abstract class FCMMessagingHandlers {
             ));
       }
 
-      return;
+      return Future<void>.value();
     });
+    return Future<void>.value();
   }
 
   static Future<void> onMessageOpenedAppHandler() async {
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       print('Got a message opened!');
-      return;
     });
-  }
-
-  static Future<void> onBackgroundHandler() async {
-    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-    return;
-  }
-
-  static Future<void> _firebaseMessagingBackgroundHandler(
-      RemoteMessage message) async {
-    // If you're going to use other Firebase services in the background, such as Firestore,
-    // make sure you call `initializeApp` before using other Firebase services.
-    print("Handling a background message: ${message.messageId}");
-    return;
+    return Future<void>.value();
   }
 
   static Future<void> onMessageStartTerminatedApp() async {
@@ -62,6 +52,23 @@ abstract class FCMMessagingHandlers {
     RemoteMessage initialMessage =
         await fcmService.firebaseMessaging.getInitialMessage();
     if (initialMessage != null) {}
+    return Future<void>.value();
+  }
+
+  static persistNotice(Map<String, dynamic> jsonData) async {
+    //!Increase total notification count. That is those attended to
+
+    return Future<void>.value();
   }
 }
-//TODO: Save notifications
+
+//!Background
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  //! Initialize database for background
+  await Get.putAsync<DBService>(() => DBService().initDBService());
+  await FCMMessagingHandlers.persistNotice(message.data);
+
+  print("Handling a background message: ${message.messageId}");
+  return Future<void>.value();
+}

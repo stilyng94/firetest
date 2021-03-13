@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firetest/remote_data_sources/google_auth_remote_source.dart';
+import 'package:firetest/remote_data_sources/auth_remote_source.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-abstract class IGoogleAuthRepository {
+abstract class IAuthRepository {
   Future<UserCredential> signInOrUpWithGoogle(GoogleSignIn googleSignIn);
   Future<UserCredential> createUserWithEmailAndPassword(
       FirebaseAuth firebaseAuth, String email, String password);
@@ -14,10 +14,10 @@ abstract class IGoogleAuthRepository {
   Future<void> appleLogout();
 }
 
-class GoogleAuthRepository implements IGoogleAuthRepository {
-  final IGoogleAuthRemoteSource iGoogleAuthRemoteSource;
+class AuthRepository implements IAuthRepository {
+  final IAuthRemoteSource iGoogleAuthRemoteSource;
 
-  GoogleAuthRepository(this.iGoogleAuthRemoteSource)
+  AuthRepository(this.iGoogleAuthRemoteSource)
       : assert(iGoogleAuthRemoteSource != null);
   @override
   Future<UserCredential> signInOrUpWithGoogle(GoogleSignIn googleSignIn) {

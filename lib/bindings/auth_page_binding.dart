@@ -3,7 +3,7 @@ import 'package:firetest/remote_data_sources/auth_remote_source.dart';
 import 'package:firetest/repositories/auth_repository.dart';
 import 'package:get/get.dart';
 
-class SignupBinding implements Bindings {
+class AuthPageBinding implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut<AuthController>(() => AuthController(

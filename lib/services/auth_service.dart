@@ -7,15 +7,8 @@ class AuthService extends GetxService {
   final Rx<User> _firebaseUser = Rx<User>();
   User get user => _firebaseUser.value;
 
-  @override
-  void onInit() {
-    super.onInit();
+  AuthService init() {
     _firebaseUser.bindStream(_auth.idTokenChanges());
-  }
-
-  @override
-  void onClose() {
-    _firebaseUser.close();
-    super.onClose();
+    return this;
   }
 }

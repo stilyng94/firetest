@@ -1,4 +1,4 @@
-import 'package:firetest/controllers/google_auth_controller.dart';
+import 'package:firetest/controllers/auth_controller.dart';
 import 'package:firetest/core/adaptives/adaptive_textfield.dart';
 import 'package:firetest/core/responsive_body_builder.dart';
 import 'package:firetest/core/shared/size_config.dart';
@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SignupWidget extends StatelessWidget {
-  final GoogleAuthController googleAuthController =
-      Get.find<GoogleAuthController>();
+  final AuthController googleAuthController = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class SignupWidget extends StatelessWidget {
       children: [
         //! background Image
         Container(
-          color: Colors.amberAccent.shade50,
+          color: Colors.amber,
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
@@ -62,9 +61,12 @@ class SignupWidget extends StatelessWidget {
 
               SizedBox(
                   width: getProportionateScreenWidth(150),
-                  child: RaisedButton(onPressed: () {
-                    googleAuthController.createUserWithEmailAndPassword();
-                  }))
+                  child: ElevatedButton(
+                    onPressed: () {
+                      googleAuthController.createUserWithEmailAndPassword();
+                    },
+                    child: Text("Signup"),
+                  ))
             ],
           ),
         ),

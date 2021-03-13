@@ -1,14 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firetest/repositories/google_auth_repository.dart';
+import 'package:firetest/repositories/auth_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:meta/meta.dart';
 
-class GoogleAuthController extends GetxController {
-  final IGoogleAuthRepository iGoogleAuthRepository;
+class AuthController extends GetxController {
+  final IAuthRepository iGoogleAuthRepository;
 
-  GoogleAuthController({@required this.iGoogleAuthRepository})
+  AuthController({@required this.iGoogleAuthRepository})
       : assert(iGoogleAuthRepository != null);
 
   final FirebaseAuth _auth = FirebaseAuth.instance;

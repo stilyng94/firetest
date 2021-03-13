@@ -1,4 +1,4 @@
-import 'package:firetest/controllers/google_auth_controller.dart';
+import 'package:firetest/controllers/auth_controller.dart';
 import 'package:firetest/core/adaptives/adaptive_textfield.dart';
 import 'package:firetest/core/responsive_body_builder.dart';
 import 'package:firetest/core/shared/size_config.dart';
@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginWidget extends StatelessWidget {
-  final GoogleAuthController googleAuthController =
-      Get.find<GoogleAuthController>();
+  final AuthController googleAuthController = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +15,11 @@ class LoginWidget extends StatelessWidget {
       children: [
         //! background Image
         Container(
-          color: Colors.amberAccent.shade50,
+          color: Colors.white,
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
@@ -46,7 +44,7 @@ class LoginWidget extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: getProportionateScreenHeight(25.0),
+                height: getProportionateScreenHeight(10.0),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
@@ -62,9 +60,12 @@ class LoginWidget extends StatelessWidget {
 
               SizedBox(
                   width: getProportionateScreenWidth(150),
-                  child: RaisedButton(onPressed: () {
-                    googleAuthController.loginWithEmailOrPassword();
-                  }))
+                  child: ElevatedButton(
+                    onPressed: () {
+                      googleAuthController.loginWithEmailOrPassword();
+                    },
+                    child: Text("Login"),
+                  ))
             ],
           ),
         ),
